@@ -1,0 +1,88 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-hover::before,
+.card-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: hsl(45 100% 51% / 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card-hover::after {
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+}
+
+.card-hover:hover::before,
+.card-hover:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.custom-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-card:hover {
+  transform: scale(0.9);
+}
+
+.clip-slant-right {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 50px 100%);
+}
+
+.clip-slant-left {
+  clip-path: polygon(0 0, 100% 0%, calc(100% - 50px) 100%, 0% 100%);
+}
+
+@media (max-width: 768px) {
+  .clip-slant-right {
+    clip-path: none;
+    height: 300px;
+  }
+
+  .clip-slant-left {
+    clip-path: none;
+    height: 300px;
+  }
+}
+
+.special-img {
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover .special-img {
+  transform: scale(1.1);
+}
+
+.social-card {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-card:hover {
+  transform: scale(1.05);
+}

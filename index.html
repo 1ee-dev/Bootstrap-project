@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page Title & Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <title>Urban Bites</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body class="bg-light">
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg bg-light px-4 gap-lg-3">
+        <img
+          src="images/logo.png"
+          alt="Logo"
+          width="40"
+          height="40"
+          class="d-inline-block align-middle" />
+        <a class="navbar-brand m-0 pe-3 border-end border-2 border-dark" href="#">Urban Bites</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav gap-3 mt-3 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link p-0" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-0" href="#">About Us</a>
+            </li>
+            <!-- Dropdown Menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link p-0 dropdown-toggle" data-bs-toggle="dropdown" href="#">Menu</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Pizza</a></li>
+                <li><a class="dropdown-item" href="#">Burger</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Healthy Salad</a></li>
+                <li><a class="dropdown-item" href="#">Meals</a></li>
+                <li><a class="dropdown-item" href="#">Crispy Chicken</a></li>
+                <li><a class="dropdown-item" href="#">More...</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link p-0" href="#">Contact</a>
+            </li>
+          </ul>
+          <!-- Navbar Form -->
+          <div class="d-flex gap-3 mt-3 mt-lg-0">
+            <input class="form-control" placeholder="Search" />
+            <button class="btn btn-warning">Search</button>
+            <button
+              class="btn btn-outline-warning text-dark"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal">
+              Login
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header border-0">
+            <h4 class="modal-title">Login</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form class="d-flex flex-column gap-2">
+              <div>
+                <label for="loginEmail" class="form-label">Email address:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="Enter Your Email" />
+              </div>
+              <div>
+                <label for="loginPassword" class="form-label">Password:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                  placeholder="Enter Your Password" />
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="remember" />
+                <label class="form-check-label" for="remember">Remember me</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer border-0">
+            <input
+              type="submit"
+              class="btn btn-warning w-100"
+              data-bs-dismiss="modal"
+              value="Login" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="position-fixed top-50 end-0 translate-middle-y z-2">
+      <ul class="list-unstyled d-flex flex-column gap-4 m-0 pe-4">
+        <li>
+          <a class="text-light btn btn-warning lh-sm rounded fs-5 p-1" href="#"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+        </li>
+        <li>
+          <a class="text-light btn btn-warning lh-sm rounded fs-5 p-1" href="#"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a class="text-light btn btn-warning lh-sm rounded fs-5 p-1" href="#"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+        </li>
+        <li>
+          <a class="text-light btn btn-warning lh-sm rounded fs-5 p-1" href="#"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a class="text-light btn btn-warning lh-sm rounded fs-5 p-1" href="#"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+
+    <main>
+      <div id="mainCarousel" class="carousel slide vh-100" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+          <button data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+          <button data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+          <button data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner h-100">
+          <div class="carousel-item h-100 active">
+            <img src="images/pizza-carousel.jpg" class="d-block w-100 h-100 object-fit-cover" />
+            <div class="carousel-caption">
+              <div
+                class="container border border-1 border-dark rounded-3 p-3 bg-dark bg-opacity-50"
+                style="max-width: 650px">
+                <h3>Pizza</h3>
+                <p>That pizza 🍕 was absolutely amazing! We couldn't get enough.</p>
+                <button class="btn btn-outline-warning">Order Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item h-100">
+            <img src="images/burger-carousel.jpg" class="d-block w-100 h-100 object-fit-cover" />
+            <div class="carousel-caption">
+              <div
+                class="container border border-1 border-dark rounded-3 p-3 bg-dark bg-opacity-50"
+                style="max-width: 650px">
+                <h3>Burger</h3>
+                <p>We had such a great time with that burger 🍔! Juicy and perfect.</p>
+                <button class="btn btn-outline-warning">Order Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item h-100">
+            <img src="images/salad-carousel.jpg" class="d-block w-100 h-100 object-fit-cover" />
+            <div class="carousel-caption">
+              <div
+                class="container border border-1 border-dark rounded-3 p-3 bg-dark bg-opacity-50"
+                style="max-width: 650px">
+                <h3>Salad</h3>
+                <p>
+                  That salad was surprisingly amazing 🥗! Who knew healthy could taste this good?
+                </p>
+                <button class="btn btn-outline-warning">Order Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item h-100">
+            <img src="images/chicken-carousel.jpg" class="d-block w-100 h-100 object-fit-cover" />
+            <div class="carousel-caption">
+              <div
+                class="container border border-1 border-dark rounded-3 p-3 bg-dark bg-opacity-50"
+                style="max-width: 650px">
+                <h3>Chicken</h3>
+                <p>
+                  Didn't expect chicken to taste this good 🍗 healthy and delicious in one bite!.
+                </p>
+                <button class="btn btn-outline-warning">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" data-bs-target="#mainCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#mainCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </main>
+
+    <section class="p-3">
+      <h3>Welcome</h3>
+      <p>
+        Welcome to Urban Bite - Step into a world of gourmet fast food crafted with passion,
+        percision, and premium ingredients. Whether you're craving a juicy burger, artisanal pizza,
+        or a fresh vibrant salad __ we have redefined fast dining to offer you elegance flavor, and
+        comfort in every bite. Sit back, relax, and let us serve you excellence __ fast.
+      </p>
+      <button class="btn btn-warning">Learn More</button>
+    </section>
+
+    <hr class="m-0 mb-3" />
+
+    <section>
+      <h2 class="text-center bg-dark text-light p-4 m-0 fst-italic">
+        The Most Famous Dishes In Our Restaurant
+      </h2>
+
+      <div id="accordion" class="py-3">
+        <button
+          class="btn btn-light text-start rounded-0 w-100 p-3 border-top border-bottom border-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne">
+          Fried Chicken
+        </button>
+        <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+          <div class="p-3 m-0">
+            A crispy and flavorful meal made with tender chicken pieces, seasoned with special herbs
+            and spices, coaled in crunchy crust. Perfectly fried and served hot with fries,
+            coleslaw, or your favourite souce.
+          </div>
+        </div>
+        <button
+          class="btn btn-light text-start rounded-0 w-100 p-3 border-top border-bottom border-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo">
+          Types of Salads
+        </button>
+        <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+          <div class="p-3 m-0">
+            Enjoy a variety of fresh and flavorful salads made with hand-picked ingredients. Choose
+            from classic salad, fresh garden salad, tangy Greek salad with olives and fela, or
+            creamy coleslaw perfect as a healthy meal.
+          </div>
+        </div>
+        <button
+          class="btn btn-light text-start rounded-0 w-100 p-3 border-top border-bottom border-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseThree">
+          Types of Pizza
+        </button>
+        <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+          <div class="p-3 m-0">
+            Discover a range of deliciouse pizzas to satisfy every craving. From the classic
+            Margheritta with fresh basil and mozzarella, to pepperoni loaded with spicy slices, to
+            BBQ chicken with tangy souce, or veggie pizza toped with colorful vegetables.Hot
+            ,cheesy,and freshly backed every time.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0 mb-3" />
+
+    <section>
+      <h2 class="text-center bg-dark text-light p-4 m-0 fst-italic">
+        Translate from Arabic to English
+      </h2>
+
+      <div class="p-3">
+        <h3>Write And Translate <span class="text-warning fw-bold">Press Here</span></h3>
+
+        <div class="d-flex gap-2 align-items-center">
+          <button
+            class="copyBtn btn btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#copiedModal">
+            Copy
+          </button>
+          <small class="d-none bg-dark bg-opacity-50 text-light rounded-pill p-1 px-2"
+            >Copied!</small
+          >
+        </div>
+
+        <!-- Copied Modal -->
+        <div class="modal fade" id="copiedModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title text-warning fst-italic fs-4">Restaurant</h4>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <p class="text-center">Copied Successfully</p>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer border-0">
+                <button class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <textarea placeholder="Translate" rows="5" class="d-block mt-3 w-100"></textarea>
+      </div>
+    </section>
+
+    <hr class="m-0 mb-3" />
+
+    <section>
+      <h2 class="text-center bg-dark text-light p-4 m-0 fst-italic">
+        Translate from Arabic to Frensh
+      </h2>
+
+      <div class="p-3">
+        <h3>Write And Translate <span class="text-warning fw-bold">Press Here</span></h3>
+
+        <div class="d-flex gap-2 align-items-center">
+          <button
+            class="copyBtn btn btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#copiedModal">
+            Copy
+          </button>
+          <small class="d-none bg-dark bg-opacity-50 text-light rounded-pill p-1 px-2"
+            >Copied!</small
+          >
+        </div>
+
+        <!-- Copied Modal -->
+        <div class="modal fade" id="copiedModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title text-warning fst-italic fs-4">Restaurant</h4>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <p class="text-center">Copied Successfully</p>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer border-0">
+                <button class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <textarea placeholder="Translate" rows="5" class="d-block mt-3 w-100"></textarea>
+      </div>
+    </section>
+
+    <hr class="m-0 mb-3" />
+
+    <section>
+      <h2 class="text-center bg-dark text-light p-4 m-0 fst-italic">
+        Translate from Arabic to German
+      </h2>
+
+      <div class="p-3">
+        <h3>Write And Translate <span class="text-warning fw-bold">Press Here</span></h3>
+
+        <div class="d-flex gap-2 align-items-center">
+          <button
+            class="copyBtn btn btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#copiedModal">
+            Copy
+          </button>
+          <small class="d-none bg-dark bg-opacity-50 text-light rounded-pill p-1 px-2"
+            >Copied!</small
+          >
+        </div>
+
+        <!-- Copied Modal -->
+        <div class="modal fade" id="copiedModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title text-warning fst-italic fs-4">Restaurant</h4>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <p class="text-center">Copied Successfully</p>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer border-0">
+                <button class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <textarea placeholder="Translate" rows="5" class="d-block mt-3 w-100"></textarea>
+      </div>
+    </section>
+
+    <hr class="m-0 mb-3" />
+
+    <section
+      style="
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0), url('images/bg-food.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 300px;
+      "></section>
+
+    <hr class="my-3" />
+
+    <section>
+      <h2 class="text-center bg-dark text-light p-4 m-0 fst-italic">
+        Popular Dishes in our Restaurant
+      </h2>
+
+      <div class="container p-5 d-flex flex-column gap-4">
+        <div class="d-flex flex-wrap flex-md-nowrap justify-content-center gap-4">
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-1" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-2" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-3" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap flex-md-nowrap justify-content-center gap-4">
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-4" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-5" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-6" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap flex-md-nowrap justify-content-center gap-4">
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-7" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+          <div class="card p-2 border-0 shadow col-10 col-md-4 col-lg-3 card-hover">
+            <img src="images/dish-8" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-warning">Show</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0), url('images/bg-food.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 300px;
+      "></section>
+
+    <hr class="my-3" />
+
+    <section>
+      <h2 class="text-center bg-dark text-light p-4 m-0 fst-italic">Thanks For</h2>
+
+      <div class="container p-5">
+        <div class="d-flex justify-content-center justify-content-lg-evenly gap-5">
+          <div
+            class="card rounded-5 col-10 col-md-4 col-lg-3 position-relative custom-card"
+            style="
+              background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0), url('images/thanks-1.jpg');
+            ">
+            <div class="card-body">
+              <p class="text-light fw-medium fst-italic m-0">All Thanks And Appreciation</p>
+              <p class="text-light m-0">🕔 June 22, 2023</p>
+              <img
+                src="images/thanks-1.jpg"
+                class="img-thumbnail object-fit-cover rounded-pill w-50 mt-5 mb-3"
+                style="aspect-ratio: 3/4; max-width: 120px" />
+              <p class="text-light m-0">Eng. Mohamed Ilady</p>
+              <small class="text-light fst-italic">Content Creator</small>
+            </div>
+          </div>
+          <div
+            class="card rounded-5 col-10 col-md-4 col-lg-3 position-relative custom-card"
+            style="
+              background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0), url('images/thanks-2.jpg');
+            ">
+            <div class="card-body">
+              <p class="text-light fw-medium fst-italic m-0">All Thanks And Appreciation</p>
+              <p class="text-light m-0">🕔 June 22, 2023</p>
+              <img
+                src="images/thanks-2.jpg"
+                class="img-thumbnail object-fit-cover rounded-pill w-50 mt-5 mb-3"
+                style="aspect-ratio: 3/4; max-width: 120px" />
+              <p class="text-light m-0">Eng. Mohamed Ilady</p>
+              <small class="text-light fst-italic">Content Creator</small>
+            </div>
+          </div>
+          <div
+            class="card rounded-5 col-10 col-md-4 col-lg-3 position-relative custom-card"
+            style="
+              background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0), url('images/thanks-3.jpg');
+            ">
+            <div class="card-body">
+              <p class="text-light fw-medium fst-italic m-0">All Thanks And Appreciation</p>
+              <p class="text-light m-0">🕔 June 22, 2023</p>
+              <img
+                src="images/thanks-3.jpg"
+                class="img-thumbnail object-fit-cover rounded-pill w-50 mt-5 mb-3"
+                style="aspect-ratio: 3/4; max-width: 120px" />
+              <p class="text-light m-0">Eng. Mohamed Ilady</p>
+              <small class="text-light fst-italic">Content Creator</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-center g-light text-dark p-4 m-0 fst-italic">Restaurant News</h2>
+
+      <div class="container p-5 d-flex flex-column gap-5">
+        <div
+          class="card border-0 shadow overflow-hidden d-flex flex-column-reverse flex-md-row justify-content-center gap-3">
+          <div class="card-body col-12 col-md-8">
+            <h3 class="card-title text-warning fst-italic">Podcast Title</h3>
+            <small
+              class="d-inline-block fw-bold mb-4"
+              style="
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 10px;
+                text-decoration-color: #ffc107;
+              "
+              >Mon / May 25th 2020</small
+            >
+            <p>
+              In Our Kitchen, Passion Doesn’t Stop At Taste Alone; It Extends To Include Innovation
+              And Renewal In Every Detail Of Our Dishes And Services. We Are Always Keen To Provide
+              Everything New For Lovers Of Distinctive Taste, From Seasonal Dishes Made With The
+              Finest Fresh Ingredients, To The Special Offers We Constantly Prepare For You To Enjoy
+              A Unique And Unforgettable Experience. Follow Our News Section To Stay Up-To-Date On
+              The Latest Updates, Whether It’s New Recipes, Special Events, Or Innovative Product
+              Launches That Suit All Tastes. We Are Here To Share Our Passion For Food And Provide
+              You With An Exceptional Experience With Every Visit And Every Dish.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-warning">🎙 Podcast</button>
+              <button class="btn btn-warning">🕔 43 mins</button>
+              <button class="btn btn-warning">▶ Play Episode</button>
+            </div>
+          </div>
+          <div class="clip-slant-right col-12 col-md-4 position-relative overflow-hidden">
+            <img
+              src="images/special-1.jpg"
+              class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover special-img" />
+          </div>
+        </div>
+
+        <div
+          class="card border-0 shadow overflow-hidden d-flex flex-column-reverse flex-md-row-reverse justify-content-center gap-3">
+          <div class="card-body col-12 col-md-8">
+            <h3 class="card-title text-warning fst-italic">Podcast Title</h3>
+            <small
+              class="d-inline-block fw-bold mb-4"
+              style="
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 10px;
+                text-decoration-color: #ffc107;
+              "
+              >Mon / May 25th 2020</small
+            >
+            <p>
+              In Our Kitchen, Passion Doesn’t Stop At Taste Alone; It Extends To Include Innovation
+              And Renewal In Every Detail Of Our Dishes And Services. We Are Always Keen To Provide
+              Everything New For Lovers Of Distinctive Taste, From Seasonal Dishes Made With The
+              Finest Fresh Ingredients, To The Special Offers We Constantly Prepare For You To Enjoy
+              A Unique And Unforgettable Experience. Follow Our News Section To Stay Up-To-Date On
+              The Latest Updates, Whether It’s New Recipes, Special Events, Or Innovative Product
+              Launches That Suit All Tastes. We Are Here To Share Our Passion For Food And Provide
+              You With An Exceptional Experience With Every Visit And Every Dish.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-warning">🎙 Podcast</button>
+              <button class="btn btn-warning">🕔 43 mins</button>
+              <button class="btn btn-warning">▶ Play Episode</button>
+            </div>
+          </div>
+          <div class="clip-slant-left col-12 col-md-4 position-relative overflow-hidden">
+            <img
+              src="images/special-2.jpg"
+              class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover special-img" />
+          </div>
+        </div>
+
+        <div
+          class="card border-0 shadow overflow-hidden d-flex flex-column-reverse flex-md-row justify-content-center gap-3">
+          <div class="card-body col-12 col-md-8">
+            <h3 class="card-title text-warning fst-italic">Podcast Title</h3>
+            <small
+              class="d-inline-block fw-bold mb-4"
+              style="
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 10px;
+                text-decoration-color: #ffc107;
+              "
+              >Mon / May 25th 2020</small
+            >
+            <p>
+              In Our Kitchen, Passion Doesn’t Stop At Taste Alone; It Extends To Include Innovation
+              And Renewal In Every Detail Of Our Dishes And Services. We Are Always Keen To Provide
+              Everything New For Lovers Of Distinctive Taste, From Seasonal Dishes Made With The
+              Finest Fresh Ingredients, To The Special Offers We Constantly Prepare For You To Enjoy
+              A Unique And Unforgettable Experience. Follow Our News Section To Stay Up-To-Date On
+              The Latest Updates, Whether It’s New Recipes, Special Events, Or Innovative Product
+              Launches That Suit All Tastes. We Are Here To Share Our Passion For Food And Provide
+              You With An Exceptional Experience With Every Visit And Every Dish.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-warning">🎙 Podcast</button>
+              <button class="btn btn-warning">🕔 43 mins</button>
+              <button class="btn btn-warning">▶ Play Episode</button>
+            </div>
+          </div>
+          <div class="clip-slant-right col-12 col-md-4 position-relative overflow-hidden">
+            <img
+              src="images/special-3.jpg"
+              class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover special-img" />
+          </div>
+        </div>
+
+        <div
+          class="card border-0 shadow overflow-hidden d-flex flex-column-reverse flex-md-row-reverse justify-content-center gap-3">
+          <div class="card-body col-12 col-md-8">
+            <h3 class="card-title text-warning fst-italic">Podcast Title</h3>
+            <small
+              class="d-inline-block fw-bold mb-4"
+              style="
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 10px;
+                text-decoration-color: #ffc107;
+              "
+              >Mon / May 25th 2020</small
+            >
+            <p>
+              In Our Kitchen, Passion Doesn’t Stop At Taste Alone; It Extends To Include Innovation
+              And Renewal In Every Detail Of Our Dishes And Services. We Are Always Keen To Provide
+              Everything New For Lovers Of Distinctive Taste, From Seasonal Dishes Made With The
+              Finest Fresh Ingredients, To The Special Offers We Constantly Prepare For You To Enjoy
+              A Unique And Unforgettable Experience. Follow Our News Section To Stay Up-To-Date On
+              The Latest Updates, Whether It’s New Recipes, Special Events, Or Innovative Product
+              Launches That Suit All Tastes. We Are Here To Share Our Passion For Food And Provide
+              You With An Exceptional Experience With Every Visit And Every Dish.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-warning">🎙 Podcast</button>
+              <button class="btn btn-warning">🕔 43 mins</button>
+              <button class="btn btn-warning">▶ Play Episode</button>
+            </div>
+          </div>
+          <div class="clip-slant-left col-12 col-md-4 position-relative overflow-hidden">
+            <img
+              src="images/special-4.jpg"
+              class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover special-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="container p-5 d-flex justify-content-center justify-content-lg-evenly align-items-center flex-wrap gap-5">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center gap-3 border border-dark border-1 shadow p-3 rounded-3 social-card">
+          <h5 class="fst-italic m-0">Subscribe Now</h5>
+          <img src="images/3d-whatsapp" />
+          <a href="#">Go To Link</a>
+        </div>
+
+        <div
+          class="d-flex flex-column justify-content-center align-items-center gap-3 border border-dark border-1 shadow p-3 rounded-3 social-card">
+          <h5 class="fst-italic m-0">Subscribe Now</h5>
+          <img src="images/3d-insta" />
+          <a href="#">Go To Link</a>
+        </div>
+
+        <div
+          class="d-flex flex-column justify-content-center align-items-center gap-3 border border-dark border-1 shadow p-3 rounded-3 social-card">
+          <h5 class="fst-italic m-0">Subscribe Now</h5>
+          <img src="images/3d-linkedin" />
+          <a href="#">Go To Link</a>
+        </div>
+
+        <div
+          class="d-flex flex-column justify-content-center align-items-center gap-3 border border-dark border-1 shadow p-3 rounded-3 social-card">
+          <h5 class="fst-italic m-0">Subscribe Now</h5>
+          <img src="images/3d-twitter" />
+          <a href="#">Go To Link</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-light py-3 mt-5">
+      <hr class="border-light m-0 mb-3" />
+      <div class="container p-3 px-5">
+        <div class="row g-0">
+          <div class="d-flex flex-column justify-content-center align-items-center col-12 col-md-4">
+            <img src="images/logo.png" width="100" height="100" />
+            <h5 class="fst-italic my-3">Good Company</h5>
+            <hr class="border-light m-0 mb-3 d-none d-md-block w-100" />
+            <p class="mb-2 opacity-75">Tel: 000-000-000</p>
+            <p class="mb-2 opacity-75">Address: Egypt</p>
+            <p class="m-0 opacity-75">Fax: 000-000-000</p>
+          </div>
+          <hr class="border-light my-3 d-block d-md-none" />
+          <div class="d-flex flex-column justify-content-center align-items-center col-12 col-md-4">
+            <img src="images/logo.png" width="100" height="100" />
+            <h5 class="fst-italic my-3">Important Links</h5>
+            <hr class="border-light m-0 mb-3 d-none d-md-block w-100" />
+            <p class="mb-2 opacity-75">Visit Us</p>
+            <p class="mb-2 opacity-75">Take A Look</p>
+            <p class="m-0 opacity-75">Your Health Is More Important</p>
+          </div>
+          <hr class="border-light my-3 d-block d-md-none" />
+          <div class="d-flex flex-column justify-content-center align-items-center col-12 col-md-4">
+            <img src="images/logo.png" width="100" height="100" />
+            <h5 class="fst-italic my-3">Vision</h5>
+            <hr class="border-light m-0 mb-3 d-none d-md-block w-100" />
+            <p class="mb-2 opacity-75">Services For All</p>
+            <p class="mb-2 opacity-75">Provide Best Services</p>
+            <p class="m-0 opacity-75">You Will Be Better Than Before</p>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light my-3" />
+      <p class="text-center text-light text-opacity-50 m-0">
+        &copy; 2024 Urban Bite. All Rights Reserved. Designed by Eng. Ziad Aboughaleb.
+      </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
