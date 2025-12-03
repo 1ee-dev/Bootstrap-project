@@ -2,9 +2,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.card-hover {
-  position: relative;
-  overflow: hidden;
+.aspect-ratio-1 {
+  aspect-ratio: 1;
+}
+
+.blur {
+  filter: blur(20px);
 }
 
 .card-hover > * {
@@ -79,6 +82,7 @@ body {
 }
 
 .social-card {
+  position: relative;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
